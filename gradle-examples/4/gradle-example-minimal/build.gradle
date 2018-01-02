@@ -33,7 +33,6 @@ allprojects {
     group = 'org.jfrog.example.gradle'
     version = '1.0'
     status = 'integration'
-    artifact = 'test'
     
 }
 
