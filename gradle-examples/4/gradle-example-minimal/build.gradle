@@ -37,7 +37,10 @@ artifactory {
             username = "admin"
             password = "P3SKGkSFCMaT5Js"
             maven = true
-
+            }
+        
+        defaults {
+           publishArtifacts = true
         }
     }
     resolve {
@@ -48,9 +51,6 @@ artifactory {
             maven = true
 
         }
-    }
-    defaults {
-        publishArtifacts = true
     }
 }
 
