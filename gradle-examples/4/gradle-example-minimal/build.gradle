@@ -49,6 +49,9 @@ artifactory {
 
         }
     }
+    defaults {
+        publishArtifacts = true
+    }
 }
 
 
