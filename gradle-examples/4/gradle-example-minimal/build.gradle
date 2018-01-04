@@ -57,7 +57,7 @@ artifactory {
             }
         
         defaults {
-          publications ('ivyJava','mavenJava')
+          publications ('mavenJava')
           publishConfigs('archives', 'published')
           publishBuildInfo = true 
           publishArtifacts = true
