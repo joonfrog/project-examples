@@ -36,6 +36,9 @@ allprojects {
     
 }
 
+dependencies {
+    testCompile 'junit:junit:4.7'
+}
 
 publishing {
    publications {
