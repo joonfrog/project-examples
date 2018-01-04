@@ -62,7 +62,6 @@ artifactory {
           publishBuildInfo = true 
           publishArtifacts = true
           publishPom = true 
-          publishIvy = true 
         }
     }
     resolve {
