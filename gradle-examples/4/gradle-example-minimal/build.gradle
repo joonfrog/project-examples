@@ -36,13 +36,15 @@ allprojects {
     
 }
 
-publishing {
-    publications {
-        mavenJava(MavenPublication) {
-            from components.java
-        }
-    }
-}
+/*
+* publishing {
+*    publications {
+*        mavenJava(MavenPublication) {
+*            from components.java
+*        }
+*    }
+* }
+*/
 
 artifactory {
     contextUrl = "http://localhost:8081/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
@@ -55,8 +57,10 @@ artifactory {
             }
         
         defaults {
-           publishArtifacts = true
-           publications('mavenJava')
+          publications ('ivyJava','mavenJava')
+          publishConfigs('archives', 'published')
+          publishBuildInfo = true 
+          publishArtifacts = true
         }
     }
     resolve {
