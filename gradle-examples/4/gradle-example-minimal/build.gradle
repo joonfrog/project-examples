@@ -24,7 +24,7 @@ buildscript {
     }
 }
 
-version = 1.0
+version = '1.0'
 
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'java'
