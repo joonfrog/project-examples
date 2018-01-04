@@ -28,7 +28,7 @@ buildscript {
 allprojects {
     apply plugin: 'com.jfrog.artifactory'
     apply plugin: 'java'
-    apply plugin: 'maven'
+    apply plugin: 'maven-publish'
   
     group = 'org.gradle.api'
     version = '1.0'
@@ -36,6 +36,13 @@ allprojects {
     
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
 
 artifactory {
     contextUrl = "http://localhost:8081/artifactory"   //The base Artifactory URL if not overridden by the publisher/resolver
@@ -48,7 +55,7 @@ artifactory {
             }
         
         defaults {
-          publications ('maven')
+          publications ('mavenJava')
           publishConfigs('archives', 'published')
           publishBuildInfo = true 
           publishArtifacts = true
