@@ -62,6 +62,7 @@ artifactory {
         defaults {
           publications ('mavenJava')
           publishConfigs('archives', 'published')
+          properties = ['qa.level': 'basic', 'dev.team' : 'core']
           publishBuildInfo = true 
           publishArtifacts = true
           publishPom = true 
