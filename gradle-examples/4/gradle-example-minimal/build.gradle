@@ -17,13 +17,14 @@
 buildscript {
     repositories {
         jcenter()
+
     }
     dependencies {
-        classpath(group: 'org.jfrog.buildinfo', name: 'build-info-extractor-gradle', version: '4.+')
+        classpath "org.jfrog.buildinfo:build-info-extractor-gradle:4+"
     }
 }
 
-version = 1.0
+version = currentVersion
 
 apply plugin: 'com.jfrog.artifactory'
 apply plugin: 'java'
@@ -45,9 +46,9 @@ artifactory {
     contextUrl = 'http://localhost:8081/artifactory'
     publish {
         repository {
-            repoKey = 'gradle-release-local'
-            username = "admin"
-            password = "P3SKGkSFCMaT5Js"
+            repoKey = 'gradle-dev-local' // The Artifactory repository key to publish to
+            username = "admin" // The publisher user name
+            password = "P3SKGkSFCMaT5Js" // The publisher password
         }
         defaults {
             // Reference to Gradle publications defined in the build script.
@@ -66,6 +67,8 @@ artifactory {
             repoKey = 'gradle-release'
             username = "admin"
             password = "P3SKGkSFCMaT5Js"
+            maven = true
+
         }
     }
 }
