@@ -48,7 +48,7 @@ artifactory {
             }
         
         defaults {
-          publications ('mavenJava')
+          publications ('maven')
           publishConfigs('archives', 'published')
           publishBuildInfo = true 
           publishArtifacts = true
